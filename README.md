@@ -1,7 +1,7 @@
 # MadrasMixtureModel
 Clustering heterogeneous tabular data, and generating synthetic tabular data
 
-This is code accompanying Chandrani Kumari and Rahul Siddharthan, “Clustering of heterogeneous tabular data and its use in generating synthetic data” [preprint](https://arxiv.org/abs/2310.19454).
+This is code accompanying Chandrani Kumari and Rahul Siddharthan, “MMM and MMMSynth: Clustering of heterogeneous tabular data, and synthetic data generation” [preprint](https://arxiv.org/abs/2310.19454).
 
 The code is tested in Julia 1.10.0.  This repository will be updated with more usable versions.  Currently it has
 
