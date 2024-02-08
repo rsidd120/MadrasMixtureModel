@@ -287,7 +287,7 @@ function read_csv(filename::String,typestring::String,forcefloat::Bool,excludela
     return Matrix(reduce(hcat,rowsf)),Matrix(reduce(hcat,rowsc))
 end
 
-function init_default(filename,typestring,forcefloat,excludelast)
+function init_default(filename; typestring="",forcefloat=false,excludelast=false)
     glob = Params(0,# minclustsize
                   0.5, # c
                   0.0, # μ₀
@@ -1282,5 +1282,18 @@ function print_output(filename::String,clusters::Vector{Cluster},glob::Params)
     end
     close(f)
 end
-    
+
+function clust2labels(clusters::Vector{Cluster},glob::Params)
+    labels = Int64[]
+    for n in 1:glob.nrows
+        for c in 1:length(clusters)
+            if clusters[c].rows[n]
+                push!(labels,c)
+                break
+            end
+        end
+    end
+    return labels
+end
+
     

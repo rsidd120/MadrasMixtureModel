@@ -61,9 +61,9 @@ function parse_cmdline()
         help = "force treating all fields as float (numeric data)"
         action=:store_true
         "--suffix","-s"
-        help = "output filename suffix (default: .labels.thichet)"
+        help = "output filename suffix (default: .labels.mmm)"
         arg_type = String
-        default = ".labels.thichet"
+        default = ".labels.mmm"
         "filename"
         help = "data file name, .csv format, no header (or header must begin with # and will be ignored)"
         arg_type = String
@@ -90,9 +90,8 @@ function main()
     excludelast = false
     typestring = ""
     forcefloat = false
-    suffix = ".labels.thichet"
+    suffix = ".labels.mmm"
     parsed_args = parse_cmdline()
-    suffix=".labels.thichet"
     for (arg,val) in parsed_args
         if arg=="pseudocount"
             pscount = val
